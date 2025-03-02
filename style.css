@@ -22,8 +22,11 @@ nav {
     padding: 10px;
 }
 
+ul {
+    display: flex;
+    align-items: center;
+}
 ul li {
-    display: inline;
     list-style: none;
 }
 
@@ -53,6 +56,13 @@ li a:hover {
     margin-left: 20px;
     font-weight: bold;
     cursor: pointer;
+}
+
+.menu-img {
+    display: none;
+    height: 35px;
+    width: 35px;
+    margin-left: 2rem;
 }
 
 /* header */
@@ -340,7 +350,42 @@ footer {
     }
 }
 
+@media only screen and (min-width: 900px){
+    ul {
+        display: flex !important;
+    } 
+}
+
 @media only screen and (max-width: 900px){
+    .menu-img{
+        display: block;
+    }
+
+    ul {
+        flex-direction: column;
+        position: absolute;
+        top: 4%;
+        left: 50%;
+        font-weight: bold;
+    }
+
+    li {
+        margin-top: 20px;
+    }
+
+    li a {
+        margin-left: 0;
+    }
+
+    nav {
+        justify-content: space-between;
+        margin-inline: 3rem;
+    }
+
+    .register-btn-nav {
+        display: none;
+    }
+    
     header {
         text-align: center;
         justify-content: center;
@@ -354,7 +399,8 @@ footer {
 
     .popularity {
         margin-top: 5rem;
-        text-align: center;
+        justify-content: center;
+        text-align: end;
     }
 
     .product {
@@ -369,22 +415,61 @@ footer {
 @media only screen and (max-width: 600px){
     .main-heading {
         font-size: 3.5rem;
+        text-align: center;
+    }
+    
+    nav {
+        justify-content: space-between;
     }
 
     .primary-heading {
         width: 350px;
         text-align: center;
+        margin-inline: auto;
     }
     .img-container {
         width: 350px;
         height: 350px;
     }
 
-    .popularity div {
-        margin-top:20px;
+    .popularity{
+        flex-direction: column;
     }
 
-    .logo-container {text-align: center;}
+    .popularity div {
+        margin-top:20px;
+        margin-right: 0;
+    }
+
+    .img-layer {
+        width: 350px;
+        height: 350px;
+    }
+
+    .img-layer .img {
+        width: 350px;
+        height: 350px;
+    }
+
+    .cards {
+        display: block;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        width: 250px;
+        height: 150px;
+        padding: 20px;
+        margin-top: 40px;
+        border-radius: 5px;
+    }
+
+    .logo-container {
+        text-align: center;
+    }
 }
 
 

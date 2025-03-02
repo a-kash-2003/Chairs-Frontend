@@ -2,22 +2,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>Chairs</title>
 </head>
 <body>
     <!-- nav -->
-    <nav>
+    <nav x-data="{mobilenavOpen: false }">
         <div class="logo">
             <h1>LOGO</h1>
         </div>
-        <ul>
+        
+        <a @click="mobilenavOpen = !mobilenavOpen">
+            <img class="menu-img" src="https://img.icons8.com/ios-filled/100/363636/menu--v6.png"/>
+        </a>
+        
+        <ul x-show="mobilenavOpen ">
             <li><a href="">Furniture</a></li>
             <li><a href="">Project</a></li>
             <li><a href="">Product</a></li>
             <li><a href="">About Us</a></li>
         </ul>
-        <button class="btn-fill">Register</button>
+
+        <button class="btn-fill register-btn-nav">Register</button>
     </nav>
 
      <!-- header -->
